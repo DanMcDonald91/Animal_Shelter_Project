@@ -26,5 +26,13 @@
    return result.map{ |animal_hash| Animal.new(animal_hash) }
  end
 
+ def self.find(id)
+  sql = "SELECT * FROM animals WHERE adoption_status = #{id}"
+  animal = SqlRunner.run(sql)
+  result = Animal.new(animal.first)
+
+return result
+end
+
 
   end
