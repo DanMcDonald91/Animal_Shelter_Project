@@ -17,4 +17,11 @@ class Owner
     animal = SqlRunner.run(sql)
     @id = animal.first()['id'].to_i
   end
+
+  def self.all()
+    sql = "SELECT * FROM owners"
+    result = SqlRunner.run(sql)
+    
+    return result.map{ |owner_hash| Owner.new(owner_hash) }
+  end
 end

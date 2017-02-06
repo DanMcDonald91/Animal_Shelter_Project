@@ -1,6 +1,6 @@
 require('pry-byebug')
 require_relative("../models/animal")
-require_relative("../models/owners")
+require_relative("../models/owner")
 
 
 animal1 = Animal.new({ "animal_name" => "Biggy",
@@ -16,11 +16,11 @@ animal3 = Animal.new({ "animal_name" => "Pablo",
 animal4 = Animal.new({ "animal_name" => "Keith",
  "species" => "Crocodile", "breed" => "Giant", "admission_date" => "2014-07-10", "adoption_status" => "Available"})
 
-owner1 = Owner.new({"full_name" => "Dan McDonald", "chosen_animal" => "Pablo"})
+owner1 = Owner.new({"full_name" => "Dan McDonald", "chosen_animal" => "Dog"})
 
-owner2 = Owner.new({"full_name" => "John Jacob Jingleheimer Schmidt", "chosen_animal" => "Biggy"})
+owner2 = Owner.new({"full_name" => "John Jacob Jingleheimer Schmidt", "chosen_animal" => "Dog"})
 
-owner3 = Owner.new({"full_name" => "Keir McDonald", "chosen_animal" => "Keith"})
+owner3 = Owner.new({"full_name" => "Keir McDonald", "chosen_animal" => "Crocodile"})
 
 binding.pry
 
