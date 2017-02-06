@@ -24,4 +24,13 @@ class Owner
     
     return result.map{ |owner_hash| Owner.new(owner_hash) }
   end
+
+  def self.find(id)
+      sql = "SELECT * FROM owners WHERE id = #{id}"
+      owner = SqlRunner.run(sql)
+      result = Owner.new(owner.first)
+
+    return result
+    end
+
 end
