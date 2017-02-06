@@ -1,0 +1,10 @@
+<h1> Owners</h1>
+
+<% for owner in @owners %>
+
+<p>Name: <%= owner.full_name %></p>
+<p>Desired animal: <%=owner.chosen_animal %></p>
+
+<hr />
+
+<% end %>
