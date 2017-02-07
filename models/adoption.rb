@@ -12,9 +12,15 @@ class Adoption
   end
 
   def save()
-    sql = "INSERT INTO adoptions (animal_id, owner_id) VALUES ('#{@animal_id}','#{@owner_id}',) RETURNING *"
-    adoption = SqlRunner.run(sql)
-    @id = adoption.first()['id'].to_i
-  end
+    sql = "INSERT INTO adoptions (animal_id, owner_id) VALUES ('#{@animal_id}', '#{@owner_id}') RETURNING id;"
+    result = SqlRunner.run(sql).first
+    @id = result['id'].to_i
+end
+
+def self.find(id)
+ sql = "SELECT * FROM adoptions WHERE id = #{id}"
+ adoptions = SqlRunner.run(sql)
+ result = Adoption.new(adoptions.first)
+end
 
 end
