@@ -2,22 +2,39 @@
 <html>
 <head>
   <title> Scottish Animal Shelter</title>
-</head>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+  
+  
+  <link rel="icon" href="/images/Saltire.png" />
+  </head>
+
+  
 
 <body>
-
+<h1> <center><bold>Scottish Animal Shelter</bold></center></h1>
+<link rel="stylesheet" type="text/css" href="/style.css">
+<link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
   <nav>
     <ul>
+    <li>
+    <a href="/animals/new">Register New Animal </a>
+    <
       <li>
-        <a href="/animals">Animals</a>
+        <a href="/animals"> All Animals</a>
       </li>
       <li>
-        <a href="/owners">Owners</a>
+      <a href="/owners">Owners</a>
       </li>
-    </ul>
+      <li>
+        <a href="/adoptions">Adoptions</a>
+      </li></ul>
   </nav>
 
+  <div class = "wrapper">
+
   <%= yield %>
+  </div>
 
 </body>
 </html>

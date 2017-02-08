@@ -1,0 +1,10 @@
+<center><h2> Adoptions</h2></center>
+
+<% for adoption in @adoptions %>
+
+<center><p>Name: <%= adoption.owner.full_name %></p>
+<p>Adopted Animal: <%= adoption.animal.animal_name %></p></center>
+
+<hr />
+
+<% end %>

@@ -3,7 +3,7 @@
 
   class Animal
 
-    attr_accessor :id, :animal_name, :species, :breed, :admission_date, :adoption_status, :animal_picture
+    attr_accessor :id, :animal_name, :species, :breed, :admission_date, :adoption_status
 
     def initialize(options)
       @id = options["id"].to_i
@@ -12,11 +12,11 @@
       @breed = options["breed"]
       @admission_date = options["admission_date"]
       @adoption_status = options["adoption_status"]
-      @animal_picture = options["animal_picture"] 
+       
     end
 
     def save()
-      sql = "INSERT INTO animals (animal_name, species, breed, admission_date, adoption_status, animal_picture) VALUES ('#{@animal_name}','#{@species}','#{@breed}','#{@admission_date}','#{adoption_status}','#{@animal_picture}') RETURNING *"
+      sql = "INSERT INTO animals (animal_name, species, breed, admission_date, adoption_status) VALUES ('#{@animal_name}','#{@species}','#{@breed}','#{@admission_date}','#{adoption_status}') RETURNING *"
       animal = SqlRunner.run(sql)
       @id = animal.first()['id'].to_i
     end
@@ -35,6 +35,11 @@
 
     return result
    end
+
+    def update
+     sql = "UPDATE animals SET (animal_name, species, breed, admission_date, adoption_status) = ('#{@animal_name}', ('#{@species}',#{@breed}','#{@admission_date}', '#{@adoption_status}' WHERE id = (#{@id};"
+   SqlRunner.run(sql)
+    end
 
    def self.delete(id)
     sql = "DELETE FROM animals WHERE id = #{id};"

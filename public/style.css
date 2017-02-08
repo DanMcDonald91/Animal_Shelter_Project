@@ -1,0 +1,55 @@
+body {
+ 
+  background-size: cover;
+  font-family: 'Merriweather', serif;
+  color: black;
+}
+
+h1 {
+   font-size: 2.0em;
+   color:black;
+   margin-bottom: 20px;
+
+}
+h2 {
+   font-family: 'Open Sans', sans-serif
+  color: darkgreen;
+}
+
+input[type="submit"] {
+  background-color: whitesmoke;
+}
+
+nav {
+  background-color: #4B6DDB;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  flex-grow: 5;
+}
+
+nav a {
+  text-decoration: bold;
+  padding: 20px;
+  display: block;
+  text-align: center;
+}
+
+nav a:hover{
+  color: violet;
+}
+
+nav a:link {
+  color: violet;
+}
+
+nav a:visited {
+  color: whitesmoke;
+

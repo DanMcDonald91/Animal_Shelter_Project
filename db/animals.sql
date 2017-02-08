@@ -9,8 +9,7 @@ animal_name VARCHAR(255) NOT NULL,
 species VARCHAR(255) NOT NULL,
 breed VARCHAR(255) NOT NULL,
 admission_date DATE NOT NULL,
-adoption_status VARCHAR(255) NOT NULL,
-animal_picture VARCHAR(255)
+adoption_status VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE owners (
